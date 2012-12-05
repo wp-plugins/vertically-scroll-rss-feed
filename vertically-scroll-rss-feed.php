@@ -4,9 +4,11 @@
 Plugin Name: Vertically scroll rss feed
 Description: This plug-in will scroll the RSS feed title vertically in the widget, admin can add/update the RSS link & style via widget management.
 Author: Gopi.R
-Version: 8.0
+Version: 8.1
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 function gVerticalscroll_rss()
@@ -225,7 +227,7 @@ function gVerticalscroll_rssfeed_control()
 			<input type="hidden" id="gVerticalscroll_rssfeed_submit" name="gVerticalscroll_rssfeed_submit" value="1" /></td>
 		  </tr>
 		</table>
-	  Check official website for more info <a target="_blank" href='http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/'>Click here</a><br> 
+	  Check official website for more information <a target="_blank" href='http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/'>Click here</a><br> 
 	<?php
 }
 
@@ -244,19 +246,19 @@ function gVerticalscroll_rssfeed_widget_init()
 
 function gVerticalscroll_rssfeed_deactivation() 
 {
-//	delete_option('gVerticalscroll_rssfeed_title');
-//	delete_option('gVerticalscroll_rssfeed_width');
-//	delete_option('gVerticalscroll_rssfeed_font');
-//	delete_option('gVerticalscroll_rssfeed_height');
-//	delete_option('gVerticalscroll_rssfeed_fontsize');
-//	delete_option('gVerticalscroll_rssfeed_slidedirection');
-//	delete_option('gVerticalscroll_rssfeed_fontweight');
-//	delete_option('gVerticalscroll_rssfeed_slidetimeout');
-//	delete_option('gVerticalscroll_rssfeed_fontcolor');
-//	delete_option('gVerticalscroll_rssfeed_textalign');
-//	delete_option('gVerticalscroll_rssfeed_textvalign');
-//	delete_option('gVerticalscroll_rssfeed_noannouncement');
-//	delete_option('gVerticalscroll_rssfeed_url');
+	//	delete_option('gVerticalscroll_rssfeed_title');
+	//	delete_option('gVerticalscroll_rssfeed_width');
+	//	delete_option('gVerticalscroll_rssfeed_font');
+	//	delete_option('gVerticalscroll_rssfeed_height');
+	//	delete_option('gVerticalscroll_rssfeed_fontsize');
+	//	delete_option('gVerticalscroll_rssfeed_slidedirection');
+	//	delete_option('gVerticalscroll_rssfeed_fontweight');
+	//	delete_option('gVerticalscroll_rssfeed_slidetimeout');
+	//	delete_option('gVerticalscroll_rssfeed_fontcolor');
+	//	delete_option('gVerticalscroll_rssfeed_textalign');
+	//	delete_option('gVerticalscroll_rssfeed_textvalign');
+	//	delete_option('gVerticalscroll_rssfeed_noannouncement');
+	//	delete_option('gVerticalscroll_rssfeed_url');
 }
 
 add_action("plugins_loaded", "gVerticalscroll_rssfeed_widget_init");

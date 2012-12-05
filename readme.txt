@@ -5,8 +5,10 @@ Donate link: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 8.0
+Tested up to: 3.5
+Stable tag: 8.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
 This plug-in will scroll the RSS feed title vertically in the widget, admin can add/update the RSS link & style via widget management.
 
@@ -64,6 +66,9 @@ Installation Instruction and Configuration check this link : [http://www.gopiplu
 
 == Upgrade Notice ==
 
+= 8.1 =
+Tested up to 3.5
+
 = 8.0 =
 Tested up to 3.4.2
 
@@ -90,6 +95,9 @@ in some server simplexml_load_file() gives error when reading the RSS feed, now 
 This is the first version.
 
 == Changelog ==
+
+= 8.1 =
+Tested up to 3.5
 
 = 8.0 =
 Tested up to 3.4.2
