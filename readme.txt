@@ -4,9 +4,9 @@ Tags: Vertically, scroll, rss, feed, vertical, xml
 Donate link: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
-Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 8.1
+Requires at least: 3.4
+Tested up to: 3.6
+Stable tag: 9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -66,6 +66,9 @@ Installation Instruction and Configuration check this link : [http://www.gopiplu
 
 == Upgrade Notice ==
 
+= 9.0 =
+Tested up to 3.6
+
 = 8.1 =
 Tested up to 3.5
 
@@ -95,6 +98,9 @@ in some server simplexml_load_file() gives error when reading the RSS feed, now 
 This is the first version.
 
 == Changelog ==
+
+= 9.0 =
+Tested up to 3.6
 
 = 8.1 =
 Tested up to 3.5
