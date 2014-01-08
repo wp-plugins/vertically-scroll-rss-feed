@@ -1,10 +1,9 @@
 <?php
-
 /*
 Plugin Name: Vertically scroll rss feed
 Description: This plug-in will scroll the RSS feed title vertically in the widget, admin can add/update the RSS link & style via widget management.
 Author: Gopi.R
-Version: 9.0
+Version: 9.1
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 License: GPLv2 or later
@@ -13,7 +12,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 function gVerticalscroll_rss()
 {
-	
 	?>
 	<script language="JavaScript" type="text/javascript">
 	g_font='<?php echo get_option('gVerticalscroll_rssfeed_font'); ?>';
@@ -22,22 +20,22 @@ function gVerticalscroll_rss()
 	g_fontWeight='<?php echo get_option('gVerticalscroll_rssfeed_fontweight'); ?>';
 	g_fontColor='<?php echo get_option('gVerticalscroll_rssfeed_fontcolor'); ?>';
 	g_textDecoration='none';
-	g_fontColorHover='<?php echo get_option('gVerticalscroll_rssfeed_fontcolor'); ?>';//		| won't work
-	g_textDecorationHover='none';//	| in Netscape4
-	g_top=0;//	|
-	g_left=0;//	| defining
-	g_width=<?php echo get_option('gVerticalscroll_rssfeed_width'); ?>;//	| the box
-	g_height=<?php echo get_option('gVerticalscroll_rssfeed_height'); ?>;//	|
+	g_fontColorHover='<?php echo get_option('gVerticalscroll_rssfeed_fontcolor'); ?>';
+	g_textDecorationHover='none';
+	g_top=0;
+	g_left=0;
+	g_width=<?php echo get_option('gVerticalscroll_rssfeed_width'); ?>;
+	g_height=<?php echo get_option('gVerticalscroll_rssfeed_height'); ?>;
 	g_paddingTop=0;
 	g_paddingLeft=0;
-	g_position='relative';// absolute/relative
-	g_timeout=<?php echo get_option('gVerticalscroll_rssfeed_slidetimeout'); ?>;//1000 = 1 second
+	g_position='relative';
+	g_timeout=<?php echo get_option('gVerticalscroll_rssfeed_slidetimeout'); ?>;
 	g_slideSpeed=1;
-	g_slideDirection=<?php echo get_option('gVerticalscroll_rssfeed_slidedirection'); ?>;//0=down-up;1=up-down
-	g_pauseOnMouseOver=true;// v2.2+ new below
-	g_slideStep=1;//pixels
-	g_textAlign='<?php echo get_option('gVerticalscroll_rssfeed_textalign'); ?>';// left/center/right
-	g_textVAlign='<?php echo get_option('gVerticalscroll_rssfeed_textvalign'); ?>';// top/middle/bottom - won't work in Netscape4
+	g_slideDirection=<?php echo get_option('gVerticalscroll_rssfeed_slidedirection'); ?>;
+	g_pauseOnMouseOver=true;
+	g_slideStep=1;
+	g_textAlign='<?php echo get_option('gVerticalscroll_rssfeed_textalign'); ?>';
+	g_textVAlign='<?php echo get_option('gVerticalscroll_rssfeed_textvalign'); ?>';
 	g_bgColor='transparent';
 	</script>
 	<?php
@@ -126,7 +124,7 @@ function gVerticalscroll_rssfeed_control()
 	$gVerticalscroll_rssfeed_noannouncement = get_option('gVerticalscroll_rssfeed_noannouncement');
 	$gVerticalscroll_rssfeed_url = get_option('gVerticalscroll_rssfeed_url');
 	
-	if (@$_POST['gVerticalscroll_rssfeed_submit']) 
+	if (isset($_POST['gVerticalscroll_rssfeed_submit'])) 
 	{	
 		$gVerticalscroll_rssfeed_title = stripslashes($_POST['gVerticalscroll_rssfeed_title']);
 		$gVerticalscroll_rssfeed_width = stripslashes($_POST['gVerticalscroll_rssfeed_width']);
@@ -159,74 +157,75 @@ function gVerticalscroll_rssfeed_control()
 		?>
 		<table width='560' border='0' cellspacing='0' cellpadding='3'>
 		  <tr>
-			<td colspan="3">Enter URL</td>
+			<td colspan="3"><?php _e('Enter URL', 'vertically-scroll-rss-feed'); ?></td>
 		  </tr>
 		  <tr>
-			<td colspan="3"><input name='gVerticalscroll_rssfeed_url' type='text' id='gVerticalscroll_rssfeed_url'  value='<?php echo $gVerticalscroll_rssfeed_url; ?>' size="70" /></td>
+			<td colspan="3"><input name='gVerticalscroll_rssfeed_url' type='text' id='gVerticalscroll_rssfeed_url'  value='<?php echo $gVerticalscroll_rssfeed_url; ?>' size="60" /></td>
 		  </tr>
 		  <tr>
-			<td width="275">Title</td>
+			<td width="275"><?php _e('Title', 'vertically-scroll-rss-feed'); ?></td>
 			<td width="10">&nbsp;</td>
-			<td width="275">Width (only number)</td>
+			<td width="275"><?php _e('Width (only number)', 'vertically-scroll-rss-feed'); ?></td>
 		  </tr>
 		  <tr>
-			<td><input name='gVerticalscroll_rssfeed_title' type='text' id='gVerticalscroll_rssfeed_title'  value='<?php echo $gVerticalscroll_rssfeed_title; ?>' size="30" maxlength="100" /></td>
+			<td><input name='gVerticalscroll_rssfeed_title' type='text' id='gVerticalscroll_rssfeed_title'  value='<?php echo $gVerticalscroll_rssfeed_title; ?>' size="20" maxlength="100" /></td>
 			<td>&nbsp;</td>
-			<td><input name='gVerticalscroll_rssfeed_width' type='text' id='gVerticalscroll_rssfeed_width'  value='<?php echo $gVerticalscroll_rssfeed_width; ?>' size="30" maxlength="3" /></td>
+			<td><input name='gVerticalscroll_rssfeed_width' type='text' id='gVerticalscroll_rssfeed_width'  value='<?php echo $gVerticalscroll_rssfeed_width; ?>' size="20" maxlength="3" /></td>
 		  </tr>
 		  <tr>
-			<td>Font </td>
+			<td><?php _e('Font', 'vertically-scroll-rss-feed'); ?></td>
 			<td>&nbsp;</td>
-			<td>Height (only number)</td>
+			<td><?php _e('Height (only number)', 'vertically-scroll-rss-feed'); ?></td>
 		  </tr>
 		  <tr>
-			<td><input name='gVerticalscroll_rssfeed_font'  type='text' id='gVerticalscroll_rssfeed_font' value='<?php echo $gVerticalscroll_rssfeed_font; ?>' size="30" /></td>
+			<td><input name='gVerticalscroll_rssfeed_font'  type='text' id='gVerticalscroll_rssfeed_font' value='<?php echo $gVerticalscroll_rssfeed_font; ?>' size="20" /></td>
 			<td>&nbsp;</td>
-			<td><input name='gVerticalscroll_rssfeed_height' type='text' id='gVerticalscroll_rssfeed_height'  value='<?php echo $gVerticalscroll_rssfeed_height; ?>' size="30" maxlength="3" /></td>
+			<td><input name='gVerticalscroll_rssfeed_height' type='text' id='gVerticalscroll_rssfeed_height'  value='<?php echo $gVerticalscroll_rssfeed_height; ?>' size="20" maxlength="3" /></td>
 		  </tr>
 		  <tr>
-			<td>Font Size (Ex:13px)</td>
+			<td><?php _e('Font Size (Ex:13px)', 'vertically-scroll-rss-feed'); ?></td>
 			<td>&nbsp;</td>
-			<td>Slide Direction(0=down-up;1=up-down)</td>
+			<td><?php _e('Slide Direction(0=down-up;1=up-down)', 'vertically-scroll-rss-feed'); ?></td>
 		  </tr>
 		  <tr>
-			<td><input name='gVerticalscroll_rssfeed_fontsize' type='text' id='gVerticalscroll_rssfeed_fontsize'  value='<?php echo $gVerticalscroll_rssfeed_fontsize; ?>' size="30" maxlength="6" /></td>
+			<td><input name='gVerticalscroll_rssfeed_fontsize' type='text' id='gVerticalscroll_rssfeed_fontsize'  value='<?php echo $gVerticalscroll_rssfeed_fontsize; ?>' size="20" maxlength="6" /></td>
 			<td>&nbsp;</td>
-			<td><input name='gVerticalscroll_rssfeed_slidedirection' type='text' id='gVerticalscroll_rssfeed_slidedirection'  value='<?php echo $gVerticalscroll_rssfeed_slidedirection; ?>' size="30" maxlength="1" /></td>
+			<td><input name='gVerticalscroll_rssfeed_slidedirection' type='text' id='gVerticalscroll_rssfeed_slidedirection'  value='<?php echo $gVerticalscroll_rssfeed_slidedirection; ?>' size="20" maxlength="1" /></td>
 		  </tr>
 		  <tr>
-			<td>Font Weight(blod/normal)</td>
+			<td><?php _e('Font Weight(blod/normal)', 'vertically-scroll-rss-feed'); ?></td>
 			<td>&nbsp;</td>
-			<td>Slide Timeout (1000=1 second)</td>
+			<td><?php _e('Slide Timeout (1000=1 second)', 'vertically-scroll-rss-feed'); ?></td>
 		  </tr>
 		  <tr>
-			<td><input name='gVerticalscroll_rssfeed_fontweight' type='text' id='gVerticalscroll_rssfeed_fontweight'  value='<?php echo $gVerticalscroll_rssfeed_fontweight; ?>' size="30" maxlength="10" /></td>
+			<td><input name='gVerticalscroll_rssfeed_fontweight' type='text' id='gVerticalscroll_rssfeed_fontweight'  value='<?php echo $gVerticalscroll_rssfeed_fontweight; ?>' size="20" maxlength="10" /></td>
 			<td>&nbsp;</td>
-			<td><input name='gVerticalscroll_rssfeed_slidetimeout' type='text' id='gVerticalscroll_rssfeed_slidetimeout'  value='<?php echo $gVerticalscroll_rssfeed_slidetimeout; ?>' size="30" maxlength="5" /></td>
+			<td><input name='gVerticalscroll_rssfeed_slidetimeout' type='text' id='gVerticalscroll_rssfeed_slidetimeout'  value='<?php echo $gVerticalscroll_rssfeed_slidetimeout; ?>' size="20" maxlength="5" /></td>
 		  </tr>
 		  <tr>
-			<td>Font Color (Ex: #000000)</td>
+			<td><?php _e('Font Color (Ex: #000000)', 'vertically-scroll-rss-feed'); ?></td>
 			<td>&nbsp;</td>
-			<td>Text Valign (top/middle/bottom)</td>
+			<td><?php _e('Text Valign (top/middle/bottom)', 'vertically-scroll-rss-feed'); ?></td>
 		  </tr>
 		  <tr>
-			<td><input name='gVerticalscroll_rssfeed_fontcolor' type='text' id='gVerticalscroll_rssfeed_fontcolor'  value='<?php echo $gVerticalscroll_rssfeed_fontcolor; ?>' size="30" maxlength="20" /></td>
+			<td><input name='gVerticalscroll_rssfeed_fontcolor' type='text' id='gVerticalscroll_rssfeed_fontcolor'  value='<?php echo $gVerticalscroll_rssfeed_fontcolor; ?>' size="20" maxlength="20" /></td>
 			<td>&nbsp;</td>
-			<td><input name='gVerticalscroll_rssfeed_textvalign' type='text' id='gVerticalscroll_rssfeed_textvalign'  value='<?php echo $gVerticalscroll_rssfeed_textvalign; ?>' size="30" maxlength="6" /></td>
+			<td><input name='gVerticalscroll_rssfeed_textvalign' type='text' id='gVerticalscroll_rssfeed_textvalign'  value='<?php echo $gVerticalscroll_rssfeed_textvalign; ?>' size="20" maxlength="6" /></td>
 		  </tr>
 		  <tr>
-			<td>No Announcement Text</td>
+			<td><?php _e('No Announcement Text', 'vertically-scroll-rss-feed'); ?></td>
 			<td>&nbsp;</td>
-			<td>Text Alignt (left/center/right)</td>
+			<td><?php _e('Text Alignt (left/center/right)', 'vertically-scroll-rss-feed'); ?></td>
 		  </tr>
 		  <tr>
-			<td><input name='gVerticalscroll_rssfeed_noannouncement' type='text' id='gVerticalscroll_rssfeed_noannouncement'  value='<?php echo $gVerticalscroll_rssfeed_noannouncement; ?>' size="30" maxlength="200" /></td>
+			<td><input name='gVerticalscroll_rssfeed_noannouncement' type='text' id='gVerticalscroll_rssfeed_noannouncement'  value='<?php echo $gVerticalscroll_rssfeed_noannouncement; ?>' size="20" maxlength="200" /></td>
 			<td>&nbsp;</td>
-			<td><input name='gVerticalscroll_rssfeed_textalign' type='text' id='gVerticalscroll_rssfeed_textalign'  value='<?php echo $gVerticalscroll_rssfeed_textalign; ?>' size="30" maxlength="6" />
+			<td><input name='gVerticalscroll_rssfeed_textalign' type='text' id='gVerticalscroll_rssfeed_textalign'  value='<?php echo $gVerticalscroll_rssfeed_textalign; ?>' size="20" maxlength="6" />
 			<input type="hidden" id="gVerticalscroll_rssfeed_submit" name="gVerticalscroll_rssfeed_submit" value="1" /></td>
 		  </tr>
 		</table>
-	  Check official website for more information <a target="_blank" href="http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/">Click here</a><br> 
+	  <br /><?php _e('Check official website for more information', 'vertically-scroll-rss-feed'); ?> 
+	  <a target="_blank" href="http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/"><?php _e('Click here', 'vertically-scroll-rss-feed'); ?></a> <br /> <br />
 	<?php
 }
 
@@ -234,12 +233,14 @@ function gVerticalscroll_rssfeed_widget_init()
 {
 	if(function_exists('wp_register_sidebar_widget')) 
 	{
-		wp_register_sidebar_widget('Scroll RSS feed', 'Scroll RSS feed', 'gVerticalscroll_rssfeed_widget');
+		wp_register_sidebar_widget(__('Scroll RSS feed', 'vertically-scroll-rss-feed'), 
+				__('Scroll RSS feed', 'vertically-scroll-rss-feed'), 'gVerticalscroll_rssfeed_widget');
 	}
 	
 	if(function_exists('wp_register_widget_control')) 
 	{
-		wp_register_widget_control('Scroll RSS feed', array('Scroll RSS feed', 'widgets'), 'gVerticalscroll_rssfeed_control', 'width=550');
+		wp_register_widget_control(__('Scroll RSS feed', 'vertically-scroll-rss-feed'), 
+				array(__('Scroll RSS feed', 'vertically-scroll-rss-feed'), 'widgets'), 'gVerticalscroll_rssfeed_control', 'width=550');
 	} 
 }
 
@@ -248,6 +249,12 @@ function gVerticalscroll_rssfeed_deactivation()
 	// No required
 }
 
+function gVerticalscroll_textdomain()
+{
+	load_plugin_textdomain( 'vertically-scroll-rss-feed', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action('plugins_loaded', 'gVerticalscroll_textdomain');
 add_action("plugins_loaded", "gVerticalscroll_rssfeed_widget_init");
 register_activation_hook(__FILE__, 'gVerticalscroll_rssfeed_install');
 register_deactivation_hook(__FILE__, 'gVerticalscroll_rssfeed_deactivation');

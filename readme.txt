@@ -5,8 +5,8 @@ Donate link: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Requires at least: 3.4
-Tested up to: 3.6
-Stable tag: 9.0
+Tested up to: 3.8
+Stable tag: 9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -62,70 +62,103 @@ Installation Instruction and Configuration check this link : [http://www.gopiplu
 == Screenshots ==
 
 1. Admin management. http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
+
 2. Front end look. http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 
 == Upgrade Notice ==
 
+= 9.1 =
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (vertically-scroll-rss-feed.po) available in the languages folder. Translators Welcome.
+
 = 9.0 =
+
 Tested up to 3.6
 
 = 8.1 =
+
 Tested up to 3.5
 
 = 8.0 =
+
 Tested up to 3.4.2
 
 = 7.0 =
+
 New demo link, www.gopiplus.com
 
-= 6.0 = 
+= 6.0 =
+
 Tested upto 3.4
 
-= 5.0 = 
+= 5.0 =
+
 Tested upto 3.1.2.
 
-= 4.0 = 
+= 4.0 =
+
 Tested upto 3.0, and new live demo link.
 
-= 3.0 = 
+= 3.0 =
+
 WP 2.8.4 support.
 
-= 2.0 =   
+= 2.0 =
+  
 Automatic installation bug fixed.  
 in some server simplexml_load_file() gives error when reading the RSS feed, now the method of RSS reader changed.   
   
-= 1.0 = 
+= 1.0 =
+
 This is the first version.
 
 == Changelog ==
 
+= 9.1 =
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (vertically-scroll-rss-feed.po) available in the languages folder. Translators Welcome.
+
 = 9.0 =
+
 Tested up to 3.6
 
 = 8.1 =
+
 Tested up to 3.5
 
 = 8.0 =
+
 Tested up to 3.4.2
 
 = 7.0 =
+
 New demo link, www.gopiplus.com
 
-= 6.0 = 
+= 6.0 =
+
 Tested upto 3.4
 
-= 5.0 = 
+= 5.0 =
+
 Tested upto 3.1.2.
 
-= 4.0 = 
+= 4.0 =
+
 Tested upto 3.0, and new live demo link.
 
-= 3.0 = 
+= 3.0 =
+ 
 WP 2.8.4 support.
 
-= 2.0 =   
+= 2.0 =
+  
 Automatic installation bug fixed.  
 in some server simplexml_load_file() gives error when reading the RSS feed, now the method of RSS reader changed.   
   
-= 1.0 = 
+= 1.0 =
+ 
 This is the first version.
