@@ -2,8 +2,8 @@
 /*
 Plugin Name: Vertically scroll rss feed
 Description: This plug-in will scroll the RSS feed title vertically in the widget, admin can add/update the RSS link & style via widget management.
-Author: Gopi.R
-Version: 9.1
+Author: Gopi Ramasamy
+Version: 9.2
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 License: GPLv2 or later
@@ -47,26 +47,30 @@ function gVerticalscroll_rss()
 	{
 		$url = "http://wordpress.org/development/feed/";
 	}
-	$xml = "";
+	
+	$maxitems = 0;
 	$rssscroll = "";
-	$cnt=0;
-	$f = fopen( $url, 'r' );
-	while( $data = fread( $f, 4096 ) ) { $xml .= $data; }
-	fclose( $f );
-	preg_match_all( "/\<item\>(.*?)\<\/item\>/s", $xml, $itemblocks );
-	foreach( $itemblocks[1] as $block )
+	$mxrf = "";
+	include_once( ABSPATH . WPINC . '/feed.php' );
+	$rss = fetch_feed( $url );
+	if ( ! is_wp_error( $rss ) )
 	{
-		$cnt++;
-		if($cnt==10)
+    	$cnt = 0;
+		$maxitems = $rss->get_item_quantity( 10 ); 
+    	$rss_items = $rss->get_items( 0, $maxitems );
+		if ( $maxitems > 0 )
 		{
-			break;
+			foreach ( $rss_items as $item )
+			{
+				$links = $item->get_permalink();
+				$title = esc_sql($item->get_title());				
+				$myLink =  '<a target="_blank" href="'.$links.'">'.$title.'</a>';
+				$rssscroll = $rssscroll . "['','".$myLink."',''],";
+				$cnt = $cnt + 1;
+			}
 		}
-		preg_match_all( "/\<title\>(.*?)\<\/title\>/",  $block, $title );
-		preg_match_all( "/\<link\>(.*?)\<\/link\>/", $block, $link );
-		
-		$myLink =  '<a target="_blank" href="'.$link[1][0].'">'.addslashes($title[1][0]).'</a>';
-		$rssscroll = $rssscroll . "['','".$myLink."',''],";
 	}
+	
 	$rssscroll=substr($rssscroll,0,(strlen($rssscroll)-1));
 	if($rssscroll == "")
 	{
