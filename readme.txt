@@ -5,12 +5,12 @@ Donate link: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 9.2
+Tested up to: 4.0
+Stable tag: 9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
-This plug-in will scroll the RSS feed title vertically in the widget, admin can add/update the RSS link & style via widget management.
+This plugin will scroll the RSS feed title vertically in the widget, admin can add/update the RSS link & style via widget management.
 
 == Description ==
 
@@ -41,21 +41,19 @@ http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 
 == Installation ==
 
-**Installation Instruction & Configuration**
-
 Installation Instruction and Configuration check this link : [http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/](http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/)
 
 == Frequently Asked Questions ==
 
-**Can I add more then one RSS feed at same time?**  
+1. Can I add more then one RSS feed at same time?
   
-**Can I change the Slide Direction?**  
+2. Can I change the Slide Direction?
   
-**Can I customize the all other appearance style?**  
+3. Can I customize the all other appearance style?
   
-**Why my news content out of range?**  
+4. Why my news content out of range?
   
-**Can I change the scroll manner from vertical to horizontal?**
+5. Can I change the scroll manner from vertical to horizontal?
 
 [Answer](http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/)  
 
@@ -66,6 +64,10 @@ Installation Instruction and Configuration check this link : [http://www.gopiplu
 2. Front end look. http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 
 == Upgrade Notice ==
+
+= 9.3 =
+
+1. Tested up to 4.0
 
 = 9.2 =
 
@@ -119,6 +121,10 @@ in some server simplexml_load_file() gives error when reading the RSS feed, now 
 This is the first version.
 
 == Changelog ==
+
+= 9.3 =
+
+1. Tested up to 4.0
 
 = 9.2 =
 
