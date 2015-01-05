@@ -5,8 +5,8 @@ Donate link: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Requires at least: 3.4
-Tested up to: 4.0
-Stable tag: 9.3
+Tested up to: 4.1
+Stable tag: 9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -65,6 +65,10 @@ Installation Instruction and Configuration check this link : [http://www.gopiplu
 
 == Upgrade Notice ==
 
+= 9.4 =
+
+1. Tested up to 4.1
+
 = 9.3 =
 
 1. Tested up to 4.0
@@ -121,6 +125,10 @@ in some server simplexml_load_file() gives error when reading the RSS feed, now 
 This is the first version.
 
 == Changelog ==
+
+= 9.4 =
+
+1. Tested up to 4.1
 
 = 9.3 =
 

@@ -3,7 +3,7 @@
 Plugin Name: Vertically scroll rss feed
 Description: This plug-in will scroll the RSS feed title vertically in the widget, admin can add/update the RSS link & style via widget management.
 Author: Gopi Ramasamy
-Version: 9.3
+Version: 9.4
 Plugin URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 Author URI: http://www.gopiplus.com/work/2010/07/18/vertically-scroll-rss-feed/
 License: GPLv2 or later
